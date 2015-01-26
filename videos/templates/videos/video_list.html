@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block main_content %}
+
+<ul>
+
+	{% for video in video_list %}
+
+		<h1><a href="{% url 'videos:video_detail' video.id %}">{{ video.title }}</a></h1>
+		<li><iframe width="420" height="315"
+		src="{{ video.url }}">
+		</iframe></li>
+		<p>{{ video.description }}</p>
+
+	{% endfor %}
+</ul>
+
+{% endblock main_content %}
